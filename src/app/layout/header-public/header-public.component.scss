@@ -1,0 +1,17 @@
+.mat-toolbar{
+  display: flex;
+}
+.logo {
+  max-height: 80%;
+}
+span {
+  opacity: 0.7;
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+app-menu-public{
+  padding-left: 8%;
+}
+app-menu-private{
+  padding-left: 5%;
+}

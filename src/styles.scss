@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: #212121;
+}
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+app-root {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.mat-typography h1 {
+  margin-bottom: 2rem;
+}
+.footer {
+  background-color: #424242;
+  color: hsla(0, 0, 100, 0.8);
+  text-align: center;
+  padding: 10px 0;
+  p {
+    margin-bottom: 0;
+    letter-spacing: 0.1em;
+    font-size: 0.7rem;
+  }
+}
+main {
+  flex-grow: 1;
+  align-self: center;
+  box-sizing: border-box;
+  padding: 2%;
+  width: 1024px;
+}

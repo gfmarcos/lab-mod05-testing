@@ -1,0 +1,59 @@
+<h1>Galería</h1>
+
+<div class="gallery">
+  <div class="img-full mat-elevation-z3">
+    <img [src]="pictures[activePicture].src" alt="" [class]="zoomLevel" />
+  </div>
+  <span
+    ><strong>{{ pictures[activePicture].title }}</strong> - id:
+    {{ pictures[activePicture].id }}</span>
+    {{activePicture}}
+    {{pictures.length}}
+  <div class="gallery-controls">
+    <button mat-mini-fab [class.disable]="btnDisablePreviousPic" (click)="picturePrevious()">
+      <mat-icon>skip_previous</mat-icon>
+    </button>
+    <button mat-mini-fab [class.disable]="btnDisableNextPic" (click)="pictureNext()">
+      <mat-icon>skip_next</mat-icon>
+    </button>
+
+    <button mat-mini-fab (click)="playGallery()" *ngIf="!runGallery">
+      <mat-icon>play_arrow</mat-icon>
+    </button>
+
+    <button mat-mini-fab (click)="stopGallery()" *ngIf="runGallery">
+      <mat-icon>stop</mat-icon>
+    </button>
+    <button mat-mini-fab (click)="zoom('in')" *ngIf="btnZoom">
+      <mat-icon>zoom_in</mat-icon>
+    </button>
+
+    <button mat-mini-fab (click)="zoom('out')" *ngIf="!btnZoom">
+      <mat-icon>zoom_out</mat-icon>
+    </button>
+  </div>
+  <div class="thumb">
+    <mat-icon
+      [class.disable]="btnDisablePrevious"
+      (click)="paginationPrevious()"
+      >skip_previous</mat-icon
+    >
+    <ul>
+      <li
+        *ngFor="
+          let picture of pictures
+            | slice: 0 + pagination:thumbColumns + pagination
+        "
+      >
+        <img
+          src="{{ picture.src }}"
+          alt="{{ picture.title }}"
+          (click)="selectPicture(picture.id)"
+        />
+      </li>
+    </ul>
+    <mat-icon [class.disable]="btnDisableNext" (click)="paginationNext()"
+      >skip_next</mat-icon
+    >
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<h1>Login</h1>
+<form #idForm="ngForm" class="mat-elevation-z3">
+  <div class="control">
+    <label>Usuario </label>
+    <input
+      [(ngModel)]="authService.userAuth.username"
+      name="username"
+      type="text"
+      required
+      minlength="8"
+      #idUsername="ngModel"
+    />
+    <div *ngIf="idUsername.invalid && idUsername.touched">
+      <div *ngIf="idUsername.errors.required">Campo requerido</div>
+      <div *ngIf="idUsername.errors.minlength">
+        Mínimo {{ idUsername.errors.minlength.requiredLength }} caracteres
+      </div>
+    </div>
+  </div>
+  <div class="control">
+    <label>Contraseña </label>
+    <input
+      [(ngModel)]="authService.userAuth.password"
+      name="password"
+      type="password"
+      required
+      minlength="6"
+      #idPassword="ngModel"
+    />
+    <div *ngIf="idPassword.invalid && idPassword.touched">
+      <div *ngIf="idPassword.errors.required">Campo requerido</div>
+      <div *ngIf="idPassword.errors.minlength">
+        Mínimo {{ idPassword.errors.minlength.requiredLength }} caracteres
+      </div>
+    </div>
+  </div>
+  <div class="control">
+    <button mat-raised-button [disabled]="idForm.invalid" (click)="login()">
+      Entrar
+    </button>
+    <div *ngIf="sendError">Error de usuario o contraseña</div>
+  </div>
+</form>
