@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RotateComponent } from './rotate.component';
 
-describe('RotateComponent', () => {
+xdescribe('RotateComponent', () => {
   let component: RotateComponent;
   let fixture: ComponentFixture<RotateComponent>;
 

@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MenuPrivateComponent } from './menu-private.component';
 
-describe('MenuPrivateComponent', () => {
+xdescribe('MenuPrivateComponent', () => {
   let component: MenuPrivateComponent;
   let fixture: ComponentFixture<MenuPrivateComponent>;
 
